@@ -30,7 +30,9 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
+                        @if(Auth::check())
                         @include('layouts.navigation')
+                        @endif
                     </ul>
 
                     <!-- Right Side Of Navbar -->

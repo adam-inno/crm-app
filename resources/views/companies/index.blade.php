@@ -15,7 +15,7 @@
                 <th>Email</th>
                 <th>Logo</th>
                 <th>Website</th>
-                <th>Actions</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -39,7 +39,7 @@
                     @endif
                 </td>
                 <td>{{ $company->website }}</td>
-                <td>
+                <td class="text-end">
                     <a href="{{ route('companies.show', $company->id) }}" class="btn btn-info">View</a>
                     <a href="{{ route('companies.edit', $company->id) }}" class="btn btn-warning">Edit</a>
                     <form action="{{ route('companies.destroy', $company->id) }}" method="POST"

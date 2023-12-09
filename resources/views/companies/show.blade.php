@@ -50,7 +50,7 @@
                 <th>Last Name</th>
                 <th>Email</th>
                 <th>Phone</th>
-                <th>Actions</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -68,7 +68,7 @@
                 <td>{{ $employee->last_name }}</td>
                 <td>{{ $employee->email }}</td>
                 <td>{{ $employee->phone }}</td>
-                <td>
+                <td class="text-end">
                     <a href="{{ route('employees.show', $employee->id) }}" class="btn btn-info">View</a>
                     <a href="{{ route('employees.edit', $employee->id) }}" class="btn btn-warning">Edit</a>
                     <form action="{{ route('employees.destroy', $employee->id) }}" method="POST"

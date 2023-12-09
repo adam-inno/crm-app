@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Public routes
 Route::get('/', function () {
     return view('auth.login');
 });
@@ -25,5 +26,8 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::post('/admin/login', [LoginController::class, 'loginAsAdmin'])->name('admin.login');
 
-Route::resource('companies', CompanyController::class);
-Route::resource('employees', EmployeeController::class);
+// Protected routes
+Route::middleware(['auth'])->group(function () {
+    Route::resource('companies', CompanyController::class);
+    Route::resource('employees', EmployeeController::class);
+});
